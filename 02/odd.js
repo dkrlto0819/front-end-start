@@ -1,5 +1,6 @@
 for(var i=1;i<=100;i++){
     if(i%2==0){ 
-        console.log(i, '짝수 입니다.');
+        var print=i+"는 짝수입니다.";
+        console.log(print);
     }
 }
