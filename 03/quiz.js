@@ -10,6 +10,7 @@ var todayPhoto = [
 ];
 
 var wrap = document.getElementById('wrap');
+var title=document.getElementById('title');
 var left=document.getElementById('left');
 var right=document.getElementById('right');
 var pagesnumber=document.getElementById('pagesnumber');
@@ -44,10 +45,13 @@ function print(){
         if(i==8){
             break;
         }
-        str += '<img src='+todayPhoto[i].img+'>'+ todayPhoto[i].title;
+        str += '<img src='+todayPhoto[i].img+' > ';
+        str1 += '<div id="titles"> '+todayPhoto[i].title+' </div>';  
     }
     var str2='<label type="text" id="pagesnumber">'+page+'/'+'3</label>';
+
     wrap.innerHTML = str;
+    //title.innerHTML=str1;
     pagesnumber.innerHTML=str2;
 }
 

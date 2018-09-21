@@ -1,33 +1,44 @@
 
-    // var board = document.getElementById("board");
-    
-    // var str, sw=0;
-    // for(var i=0; i<4; i++){
-    //     for(var j=0; j<4; j++){
-    //         if(sw==0){
-    //             str+='<div class="b"></div>'
-    //             sw=1;
-    //         }else if(sw==1){
-    //             str+='<div class="w"></div>'
-    //             sw=0; 
-    //         }
-    //     }
-    //     wrap.innerHTML = str;
-    //     str='';
-    //     sw=(sw+1)%2;
-    // }
 
-var wrap=document.querySelector('.wrap');
+var wrap = document.querySelector('.wrap');
+var str = '';
 
-var str='', sw=0;;
-for(j=1;j<=4;j++){
-    for(i=1;i<=4;i++){
-        if(i%2==sw){
-            str+='<div class="b"></div>';
-        }else{
-            str+='<div class="w"></div>';
-        }
-    }
-    sw=(sw+1)%2;
+for(let i = 1; i <= 4; i++) {
+  for(let j = 1; j <= 4; j++) {
+      str += `<div class='${(i + j) % 2 == 1 ? 'b' : 'w'}'></div>`
+      
+  }
 }
-wrap.innerHTML=str;
+wrap.innerHTML = str;
+
+var blocks = document.querySelectorAll('.wrap > div');
+
+// blocks.forEach(function(block){
+
+//   block.addEventListener('click', function(event) { 
+//     console.log(block);
+
+//     block.style.backgroundColor = 'yellow';
+//     block.className += ' y';
+//   })
+
+// });
+
+function select(event){
+    var block=event.currentTarget;
+    //console.log(block);
+    if(block.style.backgroundColor!='yellow'){
+        block.style.backgroundColor='yellow';
+    }else{
+        if(block.className=='b'){
+            block.style.backgroundColor='black';
+        }else{
+            block.style.backgroundColor='#eee';
+        }
+        //block.style.backgroundColor=block.wrap;
+        
+    }
+}
+for(var i=0;i<16;i++){
+    blocks[i].addEventListener('click', select);
+}
