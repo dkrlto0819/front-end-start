@@ -31,7 +31,7 @@ function select(event){
         block.style.backgroundColor='yellow';
     }else{
         if(block.className=='b'){
-            block.style.backgroundColor='black';
+            block.style.backgroundColor='#000';
         }else{
             block.style.backgroundColor='#eee';
         }
