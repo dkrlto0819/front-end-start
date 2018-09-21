@@ -39,15 +39,13 @@ function rightclick(){
 }
 
 function print(){
-    var str = '';
+    var str = '', str1='';
     for(var i=(page-1)*3; i<=(page-1)*3+2; i++){
         if(i==8){
             break;
         }
-        str += '<img src="'+todayPhoto[i].img+'"> ';
+        str += '<img src='+todayPhoto[i].img+'>'+ todayPhoto[i].title;
     }
-    console.log(page);
-    
     var str2='<label type="text" id="pagesnumber">'+page+'/'+'3</label>';
     wrap.innerHTML = str;
     pagesnumber.innerHTML=str2;
