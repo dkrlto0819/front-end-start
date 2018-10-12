@@ -9,10 +9,15 @@ var searchResult=document.getElementById('searchResult');
 
 function search(){ 
     document.getElementById('nextBtn').style.display="block"; 
+<<<<<<< HEAD
 
     page=1;
     getText=document.getElementById('searchText').value; 
 
+=======
+    page=1;
+    getText=document.getElementById('searchText').value; 
+>>>>>>> 98760257df968047e4e6d0f484fdf6e17ed6abb9
     if(getText=='') alert("검색어를 입력하세요.");
 
     url=`https://dapi.kakao.com/v2/search/web?query=${getText}&page=${page}`;
@@ -30,10 +35,15 @@ function search(){
     }
 
 function nextBtn(){
+<<<<<<< HEAD
 
     page+=1;
     url=`https://dapi.kakao.com/v2/search/web?query=${getText}&page=${page}`; 
     
+=======
+    page+=1;
+    url=`https://dapi.kakao.com/v2/search/web?query=${getText}&page=${page}`; 
+>>>>>>> 98760257df968047e4e6d0f484fdf6e17ed6abb9
     fetch(url,options)
         .then(function (response){
             response.json().then(function(data){

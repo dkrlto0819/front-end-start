@@ -14,7 +14,10 @@
 var $btn=$('#btn');
 var $txt=$('#txt');
 var $debug=$('#debug');
+<<<<<<< HEAD
 var $window=$('#scrollImage');
+=======
+>>>>>>> 98760257df968047e4e6d0f484fdf6e17ed6abb9
 
 $btn.on('click', function(event){
     console.log('click')
@@ -23,8 +26,12 @@ $btn.on('click', function(event){
         return;
     }
     $debug.html($txt.val());
+<<<<<<< HEAD
 });
 
 $window.scroll(function(){
     
 })
+=======
+});
+>>>>>>> 98760257df968047e4e6d0f484fdf6e17ed6abb9
