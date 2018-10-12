@@ -5,21 +5,23 @@ var options={headers:myHeaders};
 
 var page; 
 var getText='', url='', str=''; 
-var contain10= document.getElementById('btnsearch');
+var btnsearch=document.getElementById('btnsearch');
 
 function search(){ 
     document.getElementById('nextBtn').style.display="block"; 
     page=1;
     getText=document.getElementById('searchText').value; 
     if(getText=='') alert("검색어를 입력하세요.");
+
     url=`https://dapi.kakao.com/v2/search/web?query=${getText}&page=${page}`;
+
     fetch(url,options)
         .then(function(response){
             response.json().then(function(data){
                 str=''; 
                 for(var i = 0; i < data.documents.length; i++) { 
-                    str += '<div id=contain>'+'<a href='+data.documents[i].url+'>'+ data.documents[i].title +'</a></div>';
-                    contain10.innerHTML=str;
+                    str += '<div id=btnsearch>'+'<a href='+data.documents[i].url+'>'+ data.documents[i].title +'</a></div>';
+                    btnsearch.innerHTML=str;
                 }
             })
         })
@@ -31,9 +33,9 @@ function nextBtn(){
     fetch(url,options)
         .then(function (response){
             response.json().then(function(data){
-                for(var j=0; j<data.documents.length; j++){
+                for(var i=0; i<data.documents.length; i++){
                     str += '<div id=btnnext>'+'<a href='+data.documents[j].url+'>'+ data.documents[j].title +'</a></div>';
-                    contain10.innerHTML=str;
+                    btnsearch.innerHTML=str;
                 }
             })
         })
