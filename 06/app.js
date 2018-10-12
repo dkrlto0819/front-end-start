@@ -34,7 +34,7 @@ function nextBtn(){
         .then(function (response){
             response.json().then(function(data){
                 for(var i=0; i<data.documents.length; i++){
-                    str += '<div id=searchResult>'+'<a href='+data.documents[j].url+'>'+ data.documents[j].title +'</a></div>';
+                    str += '<div id=searchResult>'+'<a href='+data.documents[i].url+'>'+ data.documents[i].title +'</a></div>';
                     searchResult.innerHTML=str;
                 }
             })
