@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>1boon</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>.list{margin:10px; padding:10px}</style>
+</head>
+<body>
+    <div class="container">
+        <h1>1boon</h1>
+
+        <div>
+            <ul class="nav nav-tabs">
+                <!-- 선택된탭:선택된 탭에 .active    -->
+                <li class="active"><a href="#" id="trending">트렌딩</a></li>
+                <li><a href="#" id="issue">이슈</a></li>
+                <li><a href="#" id="enter">엔터</a></li>
+            </ul>
+        </div>
+
+        <div id="list">
+
+            <div class="text-center" id="loading">
+                <span class="glyphicon glyphicon-refresh"></span> 로딩중
+            </div>
+        </div>
+
+        <div class="text-center">
+            <button type="button" id="seeMore" class="btn btn-default">더보기</button>
+        </div>
+    </div>
+    <script src = "getJsonModule.js"></script>
+    <script src = "app.js"></script>
+</body>
+</html>
