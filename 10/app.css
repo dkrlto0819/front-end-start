@@ -1,0 +1,28 @@
+.backgroundBox {
+  /* border: 1px solid black; */
+    border-width: 1px;
+    border-style:solid;
+    border-color: black;
+    width: 400px;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.box{
+    width: 50px;
+    height: 50px;
+    background-color: yellow;
+    top: 10px;
+    left: 100px;
+    position: absolute;
+  }
+
+#bug{
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  position: absolute;
+  top: 35px;
+  left:25px;
+}
