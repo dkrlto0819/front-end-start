@@ -1,5 +1,12 @@
+body { 
+  text-align: center;
+}
+
+
 .backgroundBox {
   /* border: 1px solid black; */
+  left: 50%; margin-left: -200px;
+
     border-width: 1px;
     border-style:solid;
     border-color: black;
