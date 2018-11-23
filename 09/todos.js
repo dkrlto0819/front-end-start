@@ -1,93 +1,32 @@
-// //start...
+//start...
+var inputbox = document.getElementById('text');
+var form=document.querySelector('.new-task');
 
-
-// var todo=input.value;
-// var input = document.getElementById('memo');
-// var list = document.getElementById('list');
-// var form = document.guerySelector('.new-task');
-
-// function addTodo(event){
-//     // if(event.keyCode == 13){
-//     //     var todo = input.value;
-//     //     console.log('todo');
-//     // }\\
-
-//     console.log(todo);
-//     insertTodo(todo);
-//     event.preventDefault();
-// }
-
-// form.addEventListener('submit', addTodo);
-
-// function insertTodo(todo){
-//     var html = `<li>
-//     <button class="delete">×</button>
-//     <input type="checkbox" class="toggle-checked">
-//     <span class="text">${todo}</span>
-//   </li>`;
-
-//   list.innerHTML+=html;
-// }
-// // input.addEventListener('keydown', addTodo);
-
-var input = document.getElementById('memo');
-var list = document.getElementById('list');
-var form = document.querySelector('.new-task');
-var btn_delete=document.getElementById('btn_delete');
-var checkbox = document.getElementById('check');
-
-
+var list=document.getElementById('list');
 function addTodo(event){
-  // if(event.keyCode === 13) {
-  //   var todo = input.value;
-  //   console.log(todo);
-  // }
-  // console.log(event);
+    var todo=inputbox.value;
+    console.log(todo);
+    insertToinputbox(todo);
+    inputbox.value = '';
 
-
-  var todo = input.value;
-  console.log(todo); 
-  insertTodo(todo);
-
-  input.value = '';
-  event.preventDefault(); //form 이 안 넘어가도록
+    event.preventDefault(); // 기본적으로 form 에서 onSubmit()을 통해 submit을 하면 이베트 완료 후 refresh되어버림
 }
 
-// input.addEventListener('keydown', addTodo);
-form.addEventListener('submit', addTodo);
 var count=1;
-function insertTodo(todo){
+function insertToinputbox(str){
+    var htmlContent = `<li id=${count}><button class="delete" id="delete">×</button>
+    <input type="checkbox" id="checkbox" class="toggle-checked">
+    <span class="text">${str}</span></li> `;
 
-  var html = `<li id="a">
-        <button class="delete" id="btn_delete">×</button>
-        <input type="checkbox" id="check" class="toggle-checked">
-        <span class="text">${todo}</span>
-      </li>`;
-    
-//   list.appendChild(count);
-//   count++;
-  list.innerHTML += html;    
+    list.innerHTML+=htmlContent;
 }
-
-// function btn_delete(event) {
-//     // console.log("delete");
-//     // var parent = document.getElementById("list");
-//     // var child = document.getElementById("a");
-//     // parent.removeChild(child);
-//     // list.removeChild(event.target.button);
-
-//     if(event.target.)
-// }
-
-// btn_delete.addEventListener('click', btn_delete);
 
 function deleteTodo(event){
-    if(event.target.classList.value==='delete'){
+    if(event.target.classList.value === 'delete'){    //event.target.ClassList.value => 이벤트가 일어난 클래스의 값
         event.target.parentNode.remove();
     }
-    
 }
 
-// input.addEventListener('click', addTodo);
-form.addEventListener('submit', addTodo);
-addEventListener('click',deleteTodo)
+//inputbox.addEventListener('submit', addTodo);
+form.addEventListener('submit', addTodo);   //submit button is pressed
+addEventListener('click', deleteTodo);
